@@ -32,7 +32,6 @@ Namespace Classes
 
             Using context = New NorthWindAzureContext()
 
-
                 Return Await Task.Run(
                     Function()
                         Dim customerItemsList As List(Of CustomerItem) =
@@ -42,10 +41,10 @@ Namespace Classes
                     End Function)
 
             End Using
+
         End Function
         Public Async Function ConventionalOrderBy() As Task(Of List(Of CustomerItem))
             Using context = New NorthWindAzureContext()
-
 
                 Return Await Task.Run(
                     Function()

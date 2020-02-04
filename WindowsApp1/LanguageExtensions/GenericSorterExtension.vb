@@ -4,7 +4,9 @@ Imports System.Runtime.CompilerServices
 Namespace LanguageExtensions
 
     Public Module GenericSorterExtension
-
+        ''' <summary>
+        ''' Specifies the sort direction against a property
+        ''' </summary>
         Public Enum SortDirection
             ''' <summary>
             ''' Sort ascending.
@@ -35,7 +37,6 @@ Namespace LanguageExtensions
             Return list
 
         End Function
-
 
     End Module
 End Namespace
