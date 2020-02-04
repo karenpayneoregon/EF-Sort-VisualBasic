@@ -69,8 +69,12 @@ Namespace Classes
 
             Dim customerItemType As Type = GetType(CustomerItem)
 
-            For Each propertyInfo As PropertyInfo In customerItemType.GetProperties(BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic)
+            For Each propertyInfo As PropertyInfo In
+                customerItemType.GetProperties(BindingFlags.Instance Or
+                                               BindingFlags.Public Or BindingFlags.NonPublic)
+
                 list.Add(propertyInfo.Name.SplitCamelCase())
+
             Next
 
             Return list
