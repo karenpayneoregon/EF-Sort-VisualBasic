@@ -75,6 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\EntityColumn.vb" />
+    <Compile Include="Classes\OrderedPredicateComparer.vb" />
+    <Compile Include="Classes\SpecificOrdering.vb" />
     <Compile Include="Classes\TableInformation.vb" />
     <Compile Include="EntityCrawler.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

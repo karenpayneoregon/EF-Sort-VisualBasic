@@ -27,6 +27,8 @@ Partial Class Form1
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DescendingOrderCheckBox = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ConventionalSortOnePropertyButton = New System.Windows.Forms.Button()
+        Me.UnusualSortButton = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -53,7 +55,7 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(215, 28)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(552, 224)
+        Me.DataGridView1.Size = New System.Drawing.Size(622, 285)
         Me.DataGridView1.TabIndex = 4
         '
         'DescendingOrderCheckBox
@@ -77,18 +79,38 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Sort by"
         '
+        'ConventionalSortOnePropertyButton
+        '
+        Me.ConventionalSortOnePropertyButton.Location = New System.Drawing.Point(12, 258)
+        Me.ConventionalSortOnePropertyButton.Name = "ConventionalSortOnePropertyButton"
+        Me.ConventionalSortOnePropertyButton.Size = New System.Drawing.Size(180, 23)
+        Me.ConventionalSortOnePropertyButton.TabIndex = 7
+        Me.ConventionalSortOnePropertyButton.Text = "Conventional sort one property"
+        Me.ConventionalSortOnePropertyButton.UseVisualStyleBackColor = True
+        '
+        'UnusualSortButton
+        '
+        Me.UnusualSortButton.Location = New System.Drawing.Point(12, 290)
+        Me.UnusualSortButton.Name = "UnusualSortButton"
+        Me.UnusualSortButton.Size = New System.Drawing.Size(180, 23)
+        Me.UnusualSortButton.TabIndex = 8
+        Me.UnusualSortButton.Text = "Unusual Sort"
+        Me.UnusualSortButton.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(783, 278)
+        Me.ClientSize = New System.Drawing.Size(849, 366)
+        Me.Controls.Add(Me.UnusualSortButton)
+        Me.Controls.Add(Me.ConventionalSortOnePropertyButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.LoadCustomersButton)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Entity Framework dynamic sorting"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -100,4 +122,6 @@ Partial Class Form1
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DescendingOrderCheckBox As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ConventionalSortOnePropertyButton As Button
+    Friend WithEvents UnusualSortButton As Button
 End Class

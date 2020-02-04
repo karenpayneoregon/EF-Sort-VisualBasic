@@ -31,7 +31,7 @@ Public Class EntityCrawler
     ''' <summary>
     ''' DbContext
     ''' </summary>
-    Public Property TypeName() As String
+    Public Property ContextName() As String
 
     ''' <summary>
     ''' Setup for code first, EDMX will be different
@@ -48,7 +48,7 @@ Public Class EntityCrawler
     ''' </summary>
     Public Sub GetInformation()
 
-        Dim handle = Activator.CreateInstance(AssembleName, String.Concat(AssembleName, ".", TypeName))
+        Dim handle = Activator.CreateInstance(AssembleName, String.Concat(AssembleName, ".", ContextName))
         Dim dbContext = CType(handle.Unwrap(), DbContext)
 
         Dim objectContext = CType(dbContext, IObjectContextAdapter).ObjectContext

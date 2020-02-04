@@ -90,7 +90,9 @@
   <ItemGroup>
     <Compile Include="Classes\CustomerItem.vb" />
     <Compile Include="Classes\Customer.vb" />
-    <Compile Include="LanguageExensions\StringExtensions.vb" />
+    <Compile Include="LanguageExtensions\DataGridViewExtensions.vb" />
+    <Compile Include="LanguageExtensions\SorterExtension.vb" />
+    <Compile Include="LanguageExtensions\StringExtensions.vb" />
     <Compile Include="Models\Category.vb" />
     <Compile Include="Models\Contact.vb" />
     <Compile Include="Models\ContactType.vb" />
@@ -104,7 +106,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LanguageExensions\GenericSorterExtension.vb" />
+    <Compile Include="LanguageExtensions\GenericSorterExtension.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
