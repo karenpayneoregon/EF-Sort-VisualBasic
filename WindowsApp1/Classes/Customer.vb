@@ -1,4 +1,5 @@
 ﻿Imports System.Linq.Expressions
+Imports WindowsApp1.Classes
 
 ''' <summary>
 ''' Default view for presenting data

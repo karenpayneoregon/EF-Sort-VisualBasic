@@ -8,14 +8,16 @@ Public Class Form1
     Private CustomerView As BindingListView(Of CustomerItem)
     Private operations As New Operations
 
-    Private Async Sub LoadCustomersButton_Click(sender As Object, e As EventArgs) Handles LoadCustomersButton.Click
+    Private Async Sub LoadCustomersButton_Click(sender As Object, e As EventArgs) _
+        Handles LoadCustomersButton.Click
+
         Dim customers As List(Of CustomerItem)
         Dim PropertyName = ColumnNameListBox.Text.Replace(" "c, "")
 
         If Not DescendingOrderCheckBox.Checked Then
             customers = Await operations.CustomerSort(PropertyName)
         Else
-            customers = Await operations.CustomerSort(PropertyName, GenericSorterExtension.SortDirection.Descending)
+            customers = Await operations.CustomerSort(PropertyName, SortDirection.Descending)
         End If
 
         CustomerView = New BindingListView(Of CustomerItem)(customers)
@@ -31,12 +33,6 @@ Public Class Form1
         ' Get property names for CustomerItem
         '
         ColumnNameListBox.DataSource = operations.CustomerItemPropertyNames()
-
-        '
-        ' Perform a funky sort
-        '
-        'Dim results = Await operations.DemonstrationCustomOrdering()
-        'DataGridView1.DataSource = results
 
     End Sub
 

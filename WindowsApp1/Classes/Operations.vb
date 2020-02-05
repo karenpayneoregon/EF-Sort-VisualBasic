@@ -44,13 +44,15 @@ Namespace Classes
 
         End Function
         Public Async Function ConventionalOrderBy() As Task(Of List(Of CustomerItem))
+
             Using context = New NorthWindAzureContext()
 
                 Return Await Task.Run(
                     Function()
                         Dim customerItemsList As List(Of CustomerItem) =
                                 context.Customers.Select(Customer.Projection).ToList()
-                        Return customerItemsList.OrderBy(Function(customer) customer.CompanyName).ToList()
+                        Return customerItemsList.OrderBy(
+                            Function(customer) customer.CompanyName).ToList()
                     End Function)
 
             End Using

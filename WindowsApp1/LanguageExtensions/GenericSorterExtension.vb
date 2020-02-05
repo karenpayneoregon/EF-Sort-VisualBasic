@@ -17,6 +17,16 @@ Namespace LanguageExtensions
             ''' </summary>
             Descending
         End Enum
+        Public Enum SortOrderEnum
+            ''' <summary>
+            ''' The returned list will be ordered in ascending order
+            ''' </summary>
+            ASC
+            ''' <summary>
+            ''' The returned list wil lbe order in descending order
+            ''' </summary>
+            DESC
+        End Enum
 
         <Extension>
         Public Function Sort(Of T)(list As List(Of T), propertyName As String, sortDirection As SortDirection) As List(Of T)
@@ -37,6 +47,40 @@ Namespace LanguageExtensions
             Return list
 
         End Function
+        <Extension>
+        Public Function Sort(Of T)(source As IQueryable(Of T),
+            propertyNames() As String, sortOrder As SortOrderEnum) As IOrderedQueryable(Of T)
 
+            If propertyNames.Length = 0 Then
+                Throw New InvalidOperationException()
+            End If
+
+            Dim param = Expression.Parameter(GetType(T), String.Empty)
+            Dim expressionPropField = Expression.PropertyOrField(param, propertyNames(0))
+
+            Dim sortExpression = Expression.Lambda(expressionPropField, param)
+
+            Dim orderByCall As MethodCallExpression = Expression.Call(GetType(Queryable), "OrderBy" &
+                ((If(sortOrder = SortOrderEnum.DESC, "Descending", String.Empty))),
+                    {GetType(T), expressionPropField.Type}, source.Expression, Expression.Quote(sortExpression))
+
+            If propertyNames.Length > 1 Then
+                For index As Integer = 1 To propertyNames.Length - 1
+                    Dim item = propertyNames(index)
+                    param = Expression.Parameter(GetType(T), String.Empty)
+                    expressionPropField = Expression.PropertyOrField(param, item)
+
+                    sortExpression = Expression.Lambda(expressionPropField, param)
+
+                    orderByCall = Expression.Call(GetType(Queryable), "ThenBy" &
+                        ((If(sortOrder = SortOrderEnum.DESC, "Descending", String.Empty))),
+                            {GetType(T), expressionPropField.Type}, orderByCall, Expression.Quote(sortExpression))
+                Next
+            End If
+
+
+            Return DirectCast(source.Provider.CreateQuery(Of T)(orderByCall), IOrderedQueryable(Of T))
+
+        End Function
     End Module
 End Namespace
