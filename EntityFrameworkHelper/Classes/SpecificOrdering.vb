@@ -3,7 +3,9 @@
         Inherits OrderedPredicateComparer(Of String)
 
         Private Shared ReadOnly Order() As Func(Of String, Boolean) = {
-            Function(value) value.StartsWith("Bon"), Function(x) x.StartsWith("Cac"), Function(x) x.StartsWith("Du")}
+            Function(value) value.StartsWith("Bon"),
+            Function(item) item.StartsWith("Cac"),
+            Function(item) item.StartsWith("Du")}
 
         Public Sub New()
             MyBase.New(Order)

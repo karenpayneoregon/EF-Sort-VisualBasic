@@ -15,7 +15,8 @@ Namespace Classes
         ''' <returns></returns>
         Public Async Function CustomerSort(
            propertyName As String,
-           Optional SortDirection As SortDirection = SortDirection.Ascending) As Task(Of List(Of CustomerItem))
+           Optional SortDirection As SortDirection = SortDirection.Ascending) _
+            As Task(Of List(Of CustomerItem))
 
             Using context = New NorthWindAzureContext()
                 Return Await Task.Run(
