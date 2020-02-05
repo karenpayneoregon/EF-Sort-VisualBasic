@@ -17,16 +17,7 @@ Namespace LanguageExtensions
             ''' </summary>
             Descending
         End Enum
-        Public Enum SortOrderEnum
-            ''' <summary>
-            ''' The returned list will be ordered in ascending order
-            ''' </summary>
-            ASC
-            ''' <summary>
-            ''' The returned list wil lbe order in descending order
-            ''' </summary>
-            DESC
-        End Enum
+
 
         <Extension>
         Public Function Sort(Of T)(list As List(Of T), propertyName As String, sortDirection As SortDirection) As List(Of T)
@@ -48,8 +39,8 @@ Namespace LanguageExtensions
 
         End Function
         <Extension>
-        Public Function Sort(Of T)(source As IQueryable(Of T),
-            propertyNames() As String, sortOrder As SortOrderEnum) As IOrderedQueryable(Of T)
+        Public Function SortMultiColumn(Of T)(source As IQueryable(Of T),
+            propertyNames() As String, sortOrder As SortDirection) As IOrderedQueryable(Of T)
 
             If propertyNames.Length = 0 Then
                 Throw New InvalidOperationException()
@@ -61,8 +52,9 @@ Namespace LanguageExtensions
             Dim sortExpression = Expression.Lambda(expressionPropField, param)
 
             Dim orderByCall As MethodCallExpression = Expression.Call(GetType(Queryable), "OrderBy" &
-                ((If(sortOrder = SortOrderEnum.DESC, "Descending", String.Empty))),
-                    {GetType(T), expressionPropField.Type}, source.Expression, Expression.Quote(sortExpression))
+                ((If(sortOrder = SortDirection.Descending, "Descending", String.Empty))),
+                    {GetType(T), expressionPropField.Type},
+                        source.Expression, Expression.Quote(sortExpression))
 
             If propertyNames.Length > 1 Then
                 For index As Integer = 1 To propertyNames.Length - 1
@@ -73,8 +65,9 @@ Namespace LanguageExtensions
                     sortExpression = Expression.Lambda(expressionPropField, param)
 
                     orderByCall = Expression.Call(GetType(Queryable), "ThenBy" &
-                        ((If(sortOrder = SortOrderEnum.DESC, "Descending", String.Empty))),
-                            {GetType(T), expressionPropField.Type}, orderByCall, Expression.Quote(sortExpression))
+                        ((If(sortOrder = SortDirection.Descending, "Descending", String.Empty))),
+                            {GetType(T), expressionPropField.Type},
+                                orderByCall, Expression.Quote(sortExpression))
                 Next
             End If
 
@@ -82,5 +75,6 @@ Namespace LanguageExtensions
             Return DirectCast(source.Provider.CreateQuery(Of T)(orderByCall), IOrderedQueryable(Of T))
 
         End Function
+
     End Module
 End Namespace

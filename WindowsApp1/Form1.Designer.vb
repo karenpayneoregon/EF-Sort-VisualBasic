@@ -29,6 +29,7 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ConventionalSortOnePropertyButton = New System.Windows.Forms.Button()
         Me.UnusualSortButton = New System.Windows.Forms.Button()
+        Me.TwoColumnOrderByButton = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -38,7 +39,7 @@ Partial Class Form1
         Me.LoadCustomersButton.Location = New System.Drawing.Point(12, 229)
         Me.LoadCustomersButton.Name = "LoadCustomersButton"
         Me.LoadCustomersButton.Size = New System.Drawing.Size(180, 23)
-        Me.LoadCustomersButton.TabIndex = 2
+        Me.LoadCustomersButton.TabIndex = 0
         Me.LoadCustomersButton.Text = "Load Customers"
         Me.LoadCustomersButton.UseVisualStyleBackColor = True
         '
@@ -48,7 +49,7 @@ Partial Class Form1
         Me.ColumnNameListBox.Location = New System.Drawing.Point(6, 27)
         Me.ColumnNameListBox.Name = "ColumnNameListBox"
         Me.ColumnNameListBox.Size = New System.Drawing.Size(155, 121)
-        Me.ColumnNameListBox.TabIndex = 3
+        Me.ColumnNameListBox.TabIndex = 0
         '
         'DataGridView1
         '
@@ -64,7 +65,7 @@ Partial Class Form1
         Me.DescendingOrderCheckBox.Location = New System.Drawing.Point(6, 172)
         Me.DescendingOrderCheckBox.Name = "DescendingOrderCheckBox"
         Me.DescendingOrderCheckBox.Size = New System.Drawing.Size(110, 17)
-        Me.DescendingOrderCheckBox.TabIndex = 5
+        Me.DescendingOrderCheckBox.TabIndex = 1
         Me.DescendingOrderCheckBox.Text = "Descending order"
         Me.DescendingOrderCheckBox.UseVisualStyleBackColor = True
         '
@@ -84,24 +85,34 @@ Partial Class Form1
         Me.ConventionalSortOnePropertyButton.Location = New System.Drawing.Point(12, 258)
         Me.ConventionalSortOnePropertyButton.Name = "ConventionalSortOnePropertyButton"
         Me.ConventionalSortOnePropertyButton.Size = New System.Drawing.Size(180, 23)
-        Me.ConventionalSortOnePropertyButton.TabIndex = 7
+        Me.ConventionalSortOnePropertyButton.TabIndex = 1
         Me.ConventionalSortOnePropertyButton.Text = "Conventional sort one property"
         Me.ConventionalSortOnePropertyButton.UseVisualStyleBackColor = True
         '
         'UnusualSortButton
         '
-        Me.UnusualSortButton.Location = New System.Drawing.Point(12, 290)
+        Me.UnusualSortButton.Location = New System.Drawing.Point(12, 319)
         Me.UnusualSortButton.Name = "UnusualSortButton"
         Me.UnusualSortButton.Size = New System.Drawing.Size(180, 23)
-        Me.UnusualSortButton.TabIndex = 8
+        Me.UnusualSortButton.TabIndex = 3
         Me.UnusualSortButton.Text = "Unusual Sort"
         Me.UnusualSortButton.UseVisualStyleBackColor = True
+        '
+        'TwoColumnOrderByButton
+        '
+        Me.TwoColumnOrderByButton.Location = New System.Drawing.Point(12, 290)
+        Me.TwoColumnOrderByButton.Name = "TwoColumnOrderByButton"
+        Me.TwoColumnOrderByButton.Size = New System.Drawing.Size(180, 23)
+        Me.TwoColumnOrderByButton.TabIndex = 2
+        Me.TwoColumnOrderByButton.Text = "Two column order by"
+        Me.TwoColumnOrderByButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(849, 366)
+        Me.Controls.Add(Me.TwoColumnOrderByButton)
         Me.Controls.Add(Me.UnusualSortButton)
         Me.Controls.Add(Me.ConventionalSortOnePropertyButton)
         Me.Controls.Add(Me.GroupBox1)
@@ -124,4 +135,5 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ConventionalSortOnePropertyButton As Button
     Friend WithEvents UnusualSortButton As Button
+    Friend WithEvents TwoColumnOrderByButton As Button
 End Class

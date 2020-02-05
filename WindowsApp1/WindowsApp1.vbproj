@@ -107,6 +107,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LanguageExtensions\GenericSorterExtension.vb" />
+    <Compile Include="MultiColumnSortForm.Designer.vb">
+      <DependentUpon>MultiColumnSortForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MultiColumnSortForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -134,6 +140,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultiColumnSortForm.resx">
+      <DependentUpon>MultiColumnSortForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

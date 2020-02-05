@@ -56,4 +56,9 @@ Public Class Form1
         DataGridView1.ExpandColumns()
 
     End Sub
+
+    Private Sub TwoColumnOrderByButton_Click(sender As Object, e As EventArgs) Handles TwoColumnOrderByButton.Click
+        Dim form As New MultiColumnSortForm
+        form.ShowDialog()
+    End Sub
 End Class

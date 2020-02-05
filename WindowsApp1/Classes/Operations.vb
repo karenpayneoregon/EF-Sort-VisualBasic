@@ -28,6 +28,32 @@ Namespace Classes
             End Using
 
         End Function
+        ''' <summary>
+        ''' Perform order by with two columns same direction for sort
+        ''' </summary>
+        ''' <param name="propertyName"></param>
+        ''' <param name="SortDirection"></param>
+        ''' <returns></returns>
+        Public Async Function CustomerSortTwoProperties(
+            propertyName As String(),
+            Optional SortDirection As SortDirection = SortDirection.Descending) As Task(Of List(Of CustomerItem))
+
+            Using context = New NorthWindAzureContext()
+                Return Await Task.Run(
+                    Function()
+                        Return context.Customers.
+                                         Select(Customer.Projection).
+                                         SortMultiColumn(propertyName, SortDirection).ToList()
+                    End Function)
+            End Using
+
+        End Function
+        ''' <summary>
+        ''' Provides an example on how to custom order by, in this case
+        ''' a check for company name that starts with specific text, if present
+        ''' they are at the top of the order while the remaining values follow.
+        ''' </summary>
+        ''' <returns></returns>
         Public Async Function DemonstrationCustomOrdering() As Task(Of List(Of CustomerItem))
 
             Using context = New NorthWindAzureContext()
@@ -43,6 +69,10 @@ Namespace Classes
             End Using
 
         End Function
+        ''' <summary>
+        ''' Conventional order by using strong type property name, not a string
+        ''' </summary>
+        ''' <returns></returns>
         Public Async Function ConventionalOrderBy() As Task(Of List(Of CustomerItem))
 
             Using context = New NorthWindAzureContext()
