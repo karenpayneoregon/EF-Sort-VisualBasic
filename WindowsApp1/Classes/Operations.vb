@@ -71,6 +71,17 @@ Namespace Classes
 
         End Function
         ''' <summary>
+        ''' Without NotMappedAttribute on properties FirstName and LastName
+        ''' reading Customers would produce a runtime error as FirstName and LastName
+        ''' are not part of the model.
+        ''' </summary>
+        Public Sub DemoMapping()
+            Using context = New NorthWindAzureContext()
+                Dim customers = context.Customers.ToList()
+                Console.WriteLine()
+            End Using
+        End Sub
+        ''' <summary>
         ''' Conventional order by using strong type property name, not a string
         ''' </summary>
         ''' <returns></returns>

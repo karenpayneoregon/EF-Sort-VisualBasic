@@ -1,4 +1,5 @@
-﻿Imports System.Linq.Expressions
+﻿Imports System.ComponentModel.DataAnnotations.Schema
+Imports System.Linq.Expressions
 Imports WindowsApp1.Classes
 
 ''' <summary>
@@ -9,7 +10,9 @@ Imports WindowsApp1.Classes
 ''' will fail as FirstName and LastName are not part of the model.
 ''' </remarks>
 Partial Public Class Customer
+    <NotMapped>
     Public Property FirstName As String
+    <NotMapped>
     Public Property LastName As String
 
     Public Shared ReadOnly Property Projection() As Expression(Of Func(Of Customer, CustomerItem))
