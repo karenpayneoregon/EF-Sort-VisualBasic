@@ -88,6 +88,7 @@
     <Compile Include="Classes\Customer.vb" />
     <Compile Include="Classes\CustomerEntity.vb" />
     <Compile Include="Classes\CustomerOperations.vb" />
+    <Compile Include="LanguageExtensions\BindingSourceExtensions.vb" />
     <Compile Include="LanguageExtensions\DataGridViewExtensions.vb" />
     <Compile Include="Models\Category.vb" />
     <Compile Include="Models\Contact.vb" />
@@ -149,6 +150,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

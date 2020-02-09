@@ -1,4 +1,6 @@
-﻿Namespace Classes
+﻿Imports System.Data.Entity
+
+Namespace Classes
 
     Public Class CustomerOperations
         Public Property Context() As NorthWindAzureContext
