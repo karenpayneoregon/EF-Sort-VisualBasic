@@ -7,3 +7,7 @@ Microsoft TechNet Wiki [article](https://social.technet.microsoft.com/wiki/conte
 ![image](assets/ScreenShot1.png)
 
 ![image](assets/crawler.png)
+
+#### See also
+
+[VB.NET Entity Framework: Wiki portal](https://social.technet.microsoft.com/wiki/contents/articles/53607.vb-net-entity-framework-wiki-portal.aspx)

@@ -13,6 +13,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic Order by article", "Dynamic Order by article", "{D2A8BC7A-3E93-414A-B6E2-2D0D84B59770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6D1A23B9-0E2D-4599-BF7E-02DCDB77BF7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standard Views", "Standard Views", "{8520DB64-8FE3-431D-AE64-6FA84510F256}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WindowsApp2", "WindowsApp2\WindowsApp2.vbproj", "{3DA3468B-F4F7-4E87-815D-29A167849994}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +35,18 @@ Global
 		{5C709FF4-53CA-4D7E-A36B-3EADB60612F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C709FF4-53CA-4D7E-A36B-3EADB60612F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C709FF4-53CA-4D7E-A36B-3EADB60612F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA3468B-F4F7-4E87-815D-29A167849994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA3468B-F4F7-4E87-815D-29A167849994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA3468B-F4F7-4E87-815D-29A167849994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA3468B-F4F7-4E87-815D-29A167849994}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5AB6927A-51A2-4176-BF9E-054C2303D9E2} = {6D1A23B9-0E2D-4599-BF7E-02DCDB77BF7E}
+		{5C709FF4-53CA-4D7E-A36B-3EADB60612F7} = {D2A8BC7A-3E93-414A-B6E2-2D0D84B59770}
+		{3DA3468B-F4F7-4E87-815D-29A167849994} = {8520DB64-8FE3-431D-AE64-6FA84510F256}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B257367-25A3-4225-AA2D-6143C6DD38AB}
