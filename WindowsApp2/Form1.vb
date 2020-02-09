@@ -21,7 +21,7 @@ Public Class Form1
         '
         CustomerOperations = New CustomerOperations()
 
-        'CustomerOperations.Context.Database.Log = AddressOf Console.WriteLine
+        CustomerOperations.Context.Database.Log = AddressOf Console.WriteLine
 
         '
         ' Read customers into a view
