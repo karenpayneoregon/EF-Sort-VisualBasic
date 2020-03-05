@@ -41,6 +41,7 @@ Partial Class Form1
         Me.FirstNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountryColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SimpleFilterButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -49,6 +50,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.SimpleFilterButton)
         Me.Panel1.Controls.Add(Me.CurrentCustomerButton)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 388)
@@ -168,24 +170,38 @@ Partial Class Form1
         Me.CompanyNameColumn.DataPropertyName = "CompanyName"
         Me.CompanyNameColumn.HeaderText = "Company"
         Me.CompanyNameColumn.Name = "CompanyNameColumn"
+        Me.CompanyNameColumn.ReadOnly = True
         '
         'FirstNameColumn
         '
         Me.FirstNameColumn.DataPropertyName = "FirstName"
         Me.FirstNameColumn.HeaderText = "First"
         Me.FirstNameColumn.Name = "FirstNameColumn"
+        Me.FirstNameColumn.ReadOnly = True
         '
         'LastNameColumn
         '
         Me.LastNameColumn.DataPropertyName = "LastName"
         Me.LastNameColumn.HeaderText = "Last"
         Me.LastNameColumn.Name = "LastNameColumn"
+        Me.LastNameColumn.ReadOnly = True
         '
         'CountryColumn
         '
         Me.CountryColumn.DataPropertyName = "CountryName"
         Me.CountryColumn.HeaderText = "Country"
         Me.CountryColumn.Name = "CountryColumn"
+        Me.CountryColumn.ReadOnly = True
+        '
+        'SimpleFilterButton
+        '
+        Me.SimpleFilterButton.Enabled = False
+        Me.SimpleFilterButton.Location = New System.Drawing.Point(163, 17)
+        Me.SimpleFilterButton.Name = "SimpleFilterButton"
+        Me.SimpleFilterButton.Size = New System.Drawing.Size(145, 23)
+        Me.SimpleFilterButton.TabIndex = 4
+        Me.SimpleFilterButton.Text = "Super simple filter"
+        Me.SimpleFilterButton.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -226,4 +242,5 @@ Partial Class Form1
     Friend WithEvents LastNameColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountryColumn As DataGridViewTextBoxColumn
     Friend WithEvents CurrentCustomerButton As Button
+    Friend WithEvents SimpleFilterButton As Button
 End Class

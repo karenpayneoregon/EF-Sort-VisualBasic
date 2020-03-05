@@ -50,6 +50,8 @@ Public Class Form1
         BindingNavigator1.BindingSource = _customerBindingSource
 
         CurrentCustomerButton.Enabled = True
+        SimpleFilterButton.Enabled = True
+
 
     End Sub
     ''' <summary>
@@ -69,6 +71,15 @@ Public Class Form1
             $"Contact key: {customer.ContactId}{Environment.NewLine}" &
             $"Country key: {customer.CountryIdentifier}")
 
+    End Sub
+
+    Private Sub SimpleFilterButton_Click(sender As Object, e As EventArgs) Handles SimpleFilterButton.Click
+
+        If _customerView.Filter.ToString() = "(no filter)" Then
+            _customerView.ApplyFilter(Function(x) x.CountryName = "Mexico")
+        Else
+            _customerView.Filter = Nothing
+        End If
 
     End Sub
 End Class
